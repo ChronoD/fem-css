@@ -1,0 +1,30 @@
+Responsive Design - introduced on 2010 by Ethan Marcotte, means images that resize, media queries, grid-based layout
+Flexbox - 2008-2009, for parts of layout
+css-tricks - webpage for flexbox params
+
+box-sizing - is border width included in determining total content width.
+border-box property says yes, include it and make it all simple
+
+flex-direction: row; + flex-wrap: wrap = flex-flow: row wrap;
+
+justify-content: space-evenly - newer property, solves space-around
+
+align-content - decides space for cross axis, example between row and wrapped row
+
+order - groups into order, works when different classes used in different children items. order: 1 gets priority over order: 2
+
+property width should never be used inside flexbox (they don't adjust and break screen), instead used flex-basis which is more responsive
+
+flex-grow and flex-shrink - decides how fast the box gets bigger/smaller relative to other boxes, often not used because they are tricky
+
+<figure><figcaption></figcaption></figure>
+
+<section> might not be understood by screen readers, but use instead of div where it's meaningiful
+
+img property object-fit: cover centers the crop of the image
+
+<a> by default are inline, so only clickable on itself. if dispay: block, the whole block is clickable and not only the text
+
+when floating doesn't work right, clearing the float is needed. display: flow-root clears the flow
+
+<address> - used for phone, email, gps coordinates. depending on parents (footer - address for website), if inside <article>, is seen as author's address
