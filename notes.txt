@@ -28,3 +28,48 @@ img property object-fit: cover centers the crop of the image
 when floating doesn't work right, clearing the float is needed. display: flow-root clears the flow
 
 <address> - used for phone, email, gps coordinates. depending on parents (footer - address for website), if inside <article>, is seen as author's address
+
+always set margin: 0 and padding: 0 for lists/unordered lists <ul>
+
+you can flex-end items in a row, but set margin-right: auto for the first one. I'll be aligned to left
+
+rem is 16px in the browser, em is relative to the selected text size. 1em in paragraph is different than 1em in heading
+--
+
+to control the responsive picture fully, use <picture>, but it may become very verbose and complicated
+<picture> has children <source> elements, and fallback <img> element
+
+<source> has media property where you can specify conditions for loading the source (min-width, landscape (if it has portrait or landscape measures)
+
+to allow browser to choose the responsive picture, use srcset and sizes properties in <img>
+
+sizes allocate place in the browser, srcset names the different resolutions
+
+one can combine (put img with srcsets and sizes inside of <picture>)
+--
+
+display: grid on parent, grid-template-rows: [speciify sizes in order], grid-template-columns: [specify sizes]
+
+children porperties: grid-row, grid-column: 1/3 or 2/8 or etc.
+
+specifying sizes first helps write less code
+grid-row: 1/ span 2 - don't have to calculate the end, just tell to how much it ispans
+grid-row: span 3 - just tell for it to calculate itself
+
+fr measurement - fraction, unique to grid (grid-template-columns: 1fr 1fr 1f 1fr; grid-template-columns: repeat(4, 1fr);)
+
+grid-template-columns/rows can bet set to: auto;
+
+with grip, gap takes in one or two params (both, or between rows and between columns separately)
+
+justify-self - grid child (cell) property, e.g. with fixed width to center inside the cell
+
+max-height has value 'unset' - to remove the current active value 
+
+grid-template-areas can specify names of cells in row (rows), like this:
+grid-template-areas: "name1 name1 ... name2 name2" "name1 name1 ... name2 name2"
+this together with property on children of grid-area: "name1" would make name1 span two first rows and coloumns
+three dots or single dot leaves cell unassigned (... or .)
+
+minmax([min value], [max value]) is used to put safeguards on row/column size, e.g.: grid-template-columns: repeat(4, minmax(10px, 1fr));
+

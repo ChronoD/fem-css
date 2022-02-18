@@ -299,7 +299,42 @@ footer address {
     font-weight: bold;
 }
 
+section {
+	margin: 0 auto 5rem auto; /* added a bit of margin at the bottom of each section */
 
+}
+figure {
+	height: 100%;
+	max-height: 400px;
+}
+.stripe {
+    background-color: var(--color2);
+    color: white;
+    padding: 1rem 0 2rem 0;
+}
+
+#popularprintscolor {
+    background-color: #005f73;
+    width: 100%;
+}
+
+#popularprints{
+    padding-top: 4rem;
+    padding-bottom: 8rem;
+    margin-bottom: 0;
+}
+
+
+#popularprints h2{
+    color: white;
+    margin-top: 0;
+}
+
+#popularprints ul {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+}
 /* turn on flexbox here - prior to this, elements stacked individually as blocks */
 
 @media (min-width: 550px) {
@@ -355,6 +390,29 @@ footer address {
         color: var(--color2);
         background-color: transparent;
     }
+    #popular li:last-child {
+		flex-basis: 100%;
+	}
+
+	#popular li:last-child img {
+		object-position: 0 -350px;
+	}
+
+    #popularprints ul {
+        flex-flow: row wrap;
+        justify-content: space-between;
+    }
+
+    .tablet-duo {
+        flex-basis: 49%;
+    }
+
+    .tablet-solo{
+        flex-basis: 100%;
+    }
+    #popularprints li:last-child img{
+        object-position: 0 -350px;
+    }
 }
 
 @media (min-width: 800px) {
@@ -384,5 +442,17 @@ footer address {
     nav li:nth-child(4),
     nav li:nth-child(5) {
         order: 3;
+    }
+    section li,
+	.social,
+	#popular li:last-child {
+		flex-basis: 32.5%;
+	}
+	#popular li:last-child img {
+         object-position: 0;
+    }
+
+    .tablet-duo, .tablet-solo {
+        flex-basis: 32.60%;
     }
 }
